@@ -286,6 +286,44 @@ section {
   background-color: var(--papel);
 }
 
+.companeros {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 3.5rem;
+  counter-reset: compa;
+}
+
+.companeros li {
+  counter-increment: compa;
+}
+
+.companeros a {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 0.3rem;
+  border-bottom: 2px dotted var(--tinta);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.companeros a::before {
+  content: counter(compa, decimal-leading-zero);
+  font-family: "Caveat", cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.6;
+}
+
+.companeros a::after {
+  content: "↗";
+  margin-left: auto;
+}
+
 .pie {
   width: calc(100% - 4rem);
   display: flex;
@@ -380,7 +418,8 @@ section {
   }
 
   .cv,
-  .cursos {
+  .cursos,
+  .companeros {
     grid-template-columns: 1fr;
     gap: 0;
   }
